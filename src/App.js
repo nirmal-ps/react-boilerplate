@@ -3,11 +3,7 @@ import { Route, Redirect } from 'react-router-dom'
 // components
 import LoginForm from './components/sign-up'
 import { fetchDataGet } from './support-functions/fetch'
-function Home() {
-  return <h2>Home</h2>;
-}
-
-
+import Home from './components/home'
 class App extends Component {
   constructor() {
     super()
