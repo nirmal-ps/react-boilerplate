@@ -1,8 +1,8 @@
 import axios from 'axios';
-  const serverPath = 'http://localhost:3030'
+  
   export const fetchDataPost = (url, body) => {
     return new Promise((resolve, reject) => {
-      return axios.post(serverPath + url, body)
+      return axios.post( url, body)
         .then((response) => (response.status !== 200 ? reject(response) : response))
         .then((response) => response.data)
         .then((response) => resolve(response))
@@ -13,7 +13,7 @@ import axios from 'axios';
   };
   export const fetchDataGet = (url) => {
     return new Promise((resolve, reject) => {
-      return axios.get(serverPath + url)
+      return axios.get( url)
         .then((response) => (response.status !== 200 ? reject(response) : response))
         .then((response) => response.data)
         .then((response) => resolve(response))
@@ -25,7 +25,7 @@ import axios from 'axios';
   
   export const fetch = ( url, options = {}) => {
     return new Promise((resolve, reject) => {
-      return axios(serverPath + url, options)
+      return axios( url, options)
         .then((response) => (response.status !== 200 ? reject(response) : response))
         .then((response) => resolve(response))
         .catch((error) => {

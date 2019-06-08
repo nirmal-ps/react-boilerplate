@@ -9,7 +9,7 @@ class NormalLoginForm extends React.Component {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        fetchDataPost('/user/login', omit(values, ['remember']))
+        fetchDataPost('/api/user/login', omit(values, ['remember']))
         .then( data => {
             this.props.updateUser({
                 loggedIn: true,

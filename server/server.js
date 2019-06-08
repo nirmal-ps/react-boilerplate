@@ -43,7 +43,7 @@ app.use(passport.session()) // calls the deserializeUser
 
 
 
-app.use('/user', user)
-app.use('/test', testRouter)
+app.use('/api/user', user)
+app.use('/api/test', testRouter)
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

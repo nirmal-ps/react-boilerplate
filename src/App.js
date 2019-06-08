@@ -23,7 +23,7 @@ class App extends Component {
 
   componentDidMount() {
     this.getUser()
-    fetchDataGet('/test/').then(response => {
+    fetchDataGet('/api/test/').then(response => {
       console.log(response)
     })
   }
@@ -33,7 +33,7 @@ class App extends Component {
   }
 
   getUser() {
-    fetchDataGet('/user/').then(response => {
+    fetchDataGet('/api/user/').then(response => {
       console.log('Get user response: ')
       console.log(response)
       if (response.user) {
