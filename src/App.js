@@ -3,7 +3,9 @@ import { Route, Redirect } from 'react-router-dom'
 // components
 import LoginForm from './components/sign-up'
 import { fetchDataGet } from './support-functions/fetch'
-import Home from './components/home'
+import LayOutWrapper from './components/Layout'
+
+
 class App extends Component {
   constructor() {
     super()
@@ -61,12 +63,18 @@ class App extends Component {
         />
         <Route
           exact path="/"
-          component={Home} />
+          render={() =>
+            <LayOutWrapper
+              updateUser={this.updateUser}
+              render={() => <div/>}
+            />}
+        />
         <Route
           path="/login"
           render={() =>
             <LoginForm
               updateUser={this.updateUser}
+
             />}
         />
       </div>
